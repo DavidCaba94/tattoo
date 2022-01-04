@@ -1,0 +1,86 @@
+body {
+  background-color: rgb(250, 250, 250);
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  min-height: 50px;
+  background-color: #ffffff50;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); 
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  position: fixed;
+  top: 0;
+  width: calc(100% - 55px);
+  backdrop-filter: blur(16px);
+}
+
+.menu-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.menu-group.grupo-icono {
+  width: 100px;
+}
+
+.menu-group.group-user {
+  width: 200px;
+}
+
+.menu-group.group-items {
+  width: 60%;
+}
+
+.menu-group.group-items .menu-item:hover {
+  text-decoration: underline;
+}
+
+.menu-item {
+  padding: 5px;
+  color: #000000;
+}
+
+.menu-item.selected {
+  text-decoration: underline;
+}
+
+.menu-item img {
+  width: 40px;
+}
+
+.menu-item.login-button {
+  border: 1px solid #000000;
+  border-radius: 50px;
+  background-color: #ffffff;
+  color: #000000;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.menu-item.register-button {
+  border: 1px solid #000000;
+  border-radius: 50px;
+  background-color: #000000;
+  color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.contenedor-principal {
+  margin-top: 70px;
+}
