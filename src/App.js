@@ -1,4 +1,6 @@
 import './assets/css/App.css';
+import './utils/i18n.js';
+import './utils/session.js';
 import Icon from './assets/img/fav-color.png'
 import NotificationIcon from './assets/img/notification.png'
 import UserIcon from './assets/img/user.png'
@@ -19,32 +21,24 @@ import { Post } from './views/Post';
 import { Inbox } from './views/Inbox';
 import { Perfil } from './views/Perfil';
 import { Configuracion } from './views/Configuracion';
-//import { useState } from 'react';
+import { useState } from 'react';
 
 function App() {
-  //const [selectedMenuItem, setMenuItem] = useState('/');
-  //var selectedMenuItem = '/';
+  const [userLogin, setUserLogin] = useState(true);
   var previousItemSelected = null;
-  var userLogin = true;
+
 
   function changeMenuItemSelected(path, item) {
-    //selectedMenuItem = path;
-    if (previousItemSelected !== null 
-      && previousItemSelected !== '/' 
-      && previousItemSelected !== 'login' 
-      && previousItemSelected !== 'registro' 
-      && previousItemSelected !== 'inbox' 
-      && previousItemSelected !== 'perfil' 
-      && previousItemSelected !== 'configuracion') {
+    if (previousItemSelected !== null) {
       previousItemSelected.classList.remove('selected');
     }
-    if (item !== null 
-      && item !== '/' 
-      && item !== 'login' 
-      && item !== 'registro' 
-      && item !== 'inbox' 
-      && item !== 'perfil' 
-      && item !== 'configuracion') {
+    if (path !== null 
+      && path !== '/' 
+      && path !== 'login' 
+      && path !== 'registro' 
+      && path !== 'inbox' 
+      && path !== 'perfil' 
+      && path !== 'configuracion') {
       item.classList.add('selected');
     }
     previousItemSelected = item;
@@ -61,7 +55,7 @@ function App() {
   }
 
   function cerrarSesion() {
-    userLogin = false;
+    setUserLogin(false);
     toggleUserMenu();
   }
 
@@ -76,8 +70,8 @@ function App() {
           </Link>
         </div>
         <div className='menu-group group-items'>
-          <Link to="/feed"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('feed', e.target)}}>Feed</div></Link>
-          <Link to="/explora"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('explora', e.target)}}>Explora</div></Link>
+          <Link to="/feed"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('feed', e.target)}}>{global.language.i18n.menu.feed.es}</div></Link>
+          <Link to="/explora"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('explora', e.target)}}>{global.language.i18n.menu.explore.es}</div></Link>
           <Link to="/archivo"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('archivo', e.target)}}>Archivo</div></Link>
           <Link to="/blog"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('blog', e.target)}}>Blog</div></Link>
         </div>
