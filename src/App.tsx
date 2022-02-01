@@ -44,23 +44,13 @@ function App() {
 
   function toggleUserMenu() {
     if (
-      document
-        .getElementById("menu-desplegable-user")!
-        .classList.contains("desplegable-oculto")
+      document.getElementById("menu-desplegable-user")!.classList.contains("desplegable-oculto")
     ) {
-      document
-        .getElementById("menu-desplegable-user")!
-        .classList.remove("desplegable-oculto");
-      document
-        .getElementById("menu-desplegable-user")!
-        .classList.add("desplegable-visible");
+      document.getElementById("menu-desplegable-user")!.classList.remove("desplegable-oculto");
+      document.getElementById("menu-desplegable-user")!.classList.add("desplegable-visible");
     } else {
-      document
-        .getElementById("menu-desplegable-user")!
-        .classList.remove("desplegable-visible");
-      document
-        .getElementById("menu-desplegable-user")!
-        .classList.add("desplegable-oculto");
+      document.getElementById("menu-desplegable-user")!.classList.remove("desplegable-visible");
+      document.getElementById("menu-desplegable-user")!.classList.add("desplegable-oculto");
     }
   }
 
@@ -164,10 +154,7 @@ function App() {
             <div className="menu-item icon-logged" onClick={toggleUserMenu}>
               <img src={UserIcon} alt="user" />
             </div>
-            <div
-              id="menu-desplegable-user"
-              className="desplegable-user desplegable-oculto"
-            >
+            <div id="menu-desplegable-user" className="desplegable-user desplegable-oculto">
               <div className="top-arrow"></div>
               <Link to="/perfil">
                 <div
