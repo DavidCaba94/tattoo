@@ -1,6 +1,5 @@
 import './assets/css/App.css';
-import './utils/i18n.js';
-import './utils/session.js';
+import './utils/utils.js';
 import Icon from './assets/img/fav-color.png'
 import NotificationIcon from './assets/img/notification.png'
 import UserIcon from './assets/img/user.png'
@@ -70,8 +69,8 @@ function App() {
           </Link>
         </div>
         <div className='menu-group group-items'>
-          <Link to="/feed"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('feed', e.target)}}>{global.language.i18n.menu.feed.es}</div></Link>
-          <Link to="/explora"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('explora', e.target)}}>{global.language.i18n.menu.explore.es}</div></Link>
+          <Link to="/feed"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('feed', e.target)}}>Feed</div></Link>
+          <Link to="/explora"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('explora', e.target)}}>Explora</div></Link>
           <Link to="/archivo"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('archivo', e.target)}}>Archivo</div></Link>
           <Link to="/blog"><div className='menu-item' onClick={(e) => {changeMenuItemSelected('blog', e.target)}}>Blog</div></Link>
         </div>
